@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Calendar from "react-calendar";
@@ -10,9 +9,11 @@ function App() {
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   useEffect(() => {
-    setParseDate(
-      dateVal.getDay() + " " + dateVal.getDate() + " " + dateVal.getFullYear()
-    );
+    const tempDate =
+      dateVal.getDay() + " " + dateVal.getDate() + " " + dateVal.getFullYear();
+    console.log(dateVal);
+    setParseDate(tempDate);
+    console.log("after parsing: " + tempDate);
   }, [dateVal]);
 
   const showDate = () => {
